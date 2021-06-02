@@ -218,7 +218,7 @@ def get_model_list(dirname, key):
 def load_vgg16(model_dir):
     """ Use the model from https://github.com/abhiskk/fast-neural-style/blob/master/neural_style/utils.py """
     vgg = Vgg16()
-    vgg.load_state_dict(torch.load('/content/drive/MyDrive/UNIT/vgg16.weight')))
+    vgg.load_state_dict(torch.load('/content/drive/MyDrive/UNIT/vgg16.weight'))
     return vgg
 
 
