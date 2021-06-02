@@ -167,11 +167,11 @@ def write_html(filename, iterations, image_save_iterations, image_directory, all
     html_file.close()
 
 
-def write_loss(iterations, trainer, train_writer):
+def write_loss(iterations, trainer):
     members = [attr for attr in dir(trainer) \
                if not callable(getattr(trainer, attr)) and not attr.startswith("__") and ('loss' in attr or 'grad' in attr or 'nwd' in attr)]
     for m in members:
-        train_writer.add_scalar(m, getattr(trainer, m), iterations + 1)
+        print(m, getattr(trainer, m), iterations + 1)
 
 
 def slerp(val, low, high):
